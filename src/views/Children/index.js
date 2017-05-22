@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 
 export default class Children extends React.Component{
@@ -18,7 +19,7 @@ export default class Children extends React.Component{
   }
   render(){
     const children = this.state.children.map((child) =>{
-      return (<li key={child.id}> {child.name} {child.notes}</li>)
+      return (<li key={child.id}><Link to={`children/${child.id}`}> {child.name}</Link> {child.notes}</li>)
     })
     return(
       <div>

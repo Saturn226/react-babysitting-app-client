@@ -19,6 +19,7 @@ const NotFound = () => (<div>Not Found</div>)
 const About = () => <div>About</div>
 import Children from '../views/Children'
 import Home from '../views/Home'
+import ChildShow from '../views/Children/show.js'
 
 
 class NavBarItems extends React.Component{
@@ -70,6 +71,7 @@ export default function NavBar(){
          <Route exact path="/" component={Home}/>
          <Route exact path="/about" component={About}/>
          <Route exact path="/children" component={Children}/>
+         <Route exact path="/children/:id" component={ChildShow}/>
          <Route component={NotFound}/>
       </Switch>
     </div>
