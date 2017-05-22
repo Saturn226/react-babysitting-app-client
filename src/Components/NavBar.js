@@ -1,14 +1,23 @@
 import React from 'react'
 
 import { Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
-export default class NavBar extends React.Component{
+
+const NotFound = () => (<div>Not Found</div>)
+const About = () => <div>About</div>
+const Home = () => <div>Home</div>
+
+
+class NavBarItems extends React.Component{
 
     state = {}
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-
 
   render(){
     const { activeItem } = this.state
@@ -34,4 +43,20 @@ export default class NavBar extends React.Component{
 
     )
   }
+}
+
+
+export default function NavBar(){
+  return(
+    <Router>
+      <div>
+        <NavBarItems/>
+      <Switch>
+         <Route exact path="/" component={Home}/>
+         <Route exact path="/about" component={About}/>
+         <Route component={NotFound}/>
+      </Switch>
+    </div>
+    </Router>
+  )
 }
