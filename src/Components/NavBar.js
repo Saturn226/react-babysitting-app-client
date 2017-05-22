@@ -8,10 +8,17 @@ import {
   Switch
 } from 'react-router-dom'
 
+/*
+Routes
+  Children: Show, Index, Edit, update
+    Activities: Children.activities, All Activities
+  User: Show (possibly edit, update)
+*/
 
 const NotFound = () => (<div>Not Found</div>)
 const About = () => <div>About</div>
-const Home = () => <div>Home</div>
+import Children from '../views/Children'
+import Home from '../views/Home'
 
 
 class NavBarItems extends React.Component{
@@ -39,6 +46,14 @@ class NavBarItems extends React.Component{
           About
         </Menu.Item>
 
+        <Menu.Item as={Link} to="/children"
+          name='children'
+          active={activeItem === 'children'}
+          onClick={this.handleItemClick}
+        >
+          Children
+        </Menu.Item>
+
         </Menu>
 
     )
@@ -54,6 +69,7 @@ export default function NavBar(){
       <Switch>
          <Route exact path="/" component={Home}/>
          <Route exact path="/about" component={About}/>
+         <Route exact path="/children" component={Children}/>
          <Route component={NotFound}/>
       </Switch>
     </div>
