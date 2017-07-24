@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Menu } from 'semantic-ui-react'
+import { Menu, Link } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+ // Link,
   Switch
 } from 'react-router-dom'
 
@@ -19,7 +19,8 @@ const NotFound = () => (<div>Not Found</div>)
 const About = () => <div>About</div>
 import Children from '../views/Children'
 import Home from '../views/Home'
-import ChildShow from '../views/Children/show.js'
+const ChildShow = () => <div>This is a single child</div>
+//import ChildShow from '../views/Children/show.js'
 
 
 class NavBarItems extends React.Component{

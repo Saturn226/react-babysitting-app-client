@@ -1,7 +1,7 @@
 import React from 'react'
 import MainPageComponent from './MainPageComponent'
 import {Menu} from 'semantic-ui-react'
-
+import {Link} from 'react-router-dom'
 export default class SideNavComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -17,27 +17,28 @@ export default class SideNavComponent extends React.Component {
     const { activeItem } = this.state;
 
     return (
-      <div>
+   
         <Menu vertical id="side-menu">
-          <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="messages"
-            active={activeItem === "messages"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="friends"
-            active={activeItem === "friends"}
-            onClick={this.handleItemClick}
-          />
+        <Menu.Item as={Link} to="/"
+          name='home'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        />
+      
+         <Menu.Item as={Link} to="/about"
+          name='about'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        />
+
+        <Menu.Item as={Link} to="/children"
+          name='children'
+          active={activeItem === 'children'}
+          onClick={this.handleItemClick}
+        />
         </Menu>
-        )
-        <MainPageComponent />
-      </div>
+
+    
     );
   }
 }
