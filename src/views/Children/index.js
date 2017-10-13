@@ -23,7 +23,7 @@ export default class Children extends React.Component{
     })
     return(
       <div>
-        List of All Children
+        List of All Children 
         <ul>{children}</ul>
       </div>
     )
